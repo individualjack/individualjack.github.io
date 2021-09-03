@@ -1,0 +1,30 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>羽姗的加油站</title>
+        <link>https://individualjack.github.io/</link>
+        <description>羽姗的加油站</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 27 Aug 2021 17:16:07 &#43;0800</lastBuildDate>
+            <atom:link href="https://individualjack.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>Oracle在CentOS7下的安装与配置</title>
+    <link>https://individualjack.github.io/posts/oracle%E5%9C%A8centos7%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
+    <pubDate>Fri, 27 Aug 2021 17:16:07 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://individualjack.github.io/posts/oracle%E5%9C%A8centos7%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
+    <description><![CDATA[CentOS7****上安装oracle11gR2 一、运行环境 系统环境：CentOS7 64位(图形安装) #yum -y groupinstall &ldquo;X Window System&rdquo; &ldquo;Chinese Support&rdquo; &ldquo;Desktop&rdquo; 检查硬盘分区： #df -h]]></description>
+</item><item>
+    <title>Centos7相关操作命令</title>
+    <link>https://individualjack.github.io/posts/centos7%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</link>
+    <pubDate>Wed, 25 Aug 2021 17:02:04 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://individualjack.github.io/posts/centos7%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</guid>
+    <description><![CDATA[CentOS 7基本环境配置和常用命令 本文主要用于介绍CentOS7的常用命令和基本配置，如：配置网卡、修改主机名、修改主机名和网卡的映射关系、关闭防火]]></description>
+</item><item>
+    <title>使用HUGO创建博客</title>
+    <link>https://individualjack.github.io/posts/%E4%BD%BF%E7%94%A8hugo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+    <pubDate>Wed, 25 Aug 2021 16:59:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://individualjack.github.io/posts/%E4%BD%BF%E7%94%A8hugo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+    <description><![CDATA[使用HUGO创建博客 一、创建博客的命令以及参数修改细节 从hugo官方主页上下载hugo 主题 ，推荐LoveIt hugo server -t LoveIt &ndash;buildDrafts #本地启动博客（/my]]></description>
+</item></channel>
+</rss>

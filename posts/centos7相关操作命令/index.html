@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Centos7相关操作命令 - 羽姗的加油站</title><meta name="Description" content=""><meta property="og:title" content="Centos7相关操作命令" />
+<meta property="og:description" content="CentOS 7基本环境配置和常用命令 本文主要用于介绍CentOS7的常用命令和基本配置，如：配置网卡、修改主机名、修改主机名和网卡的映射关系、关闭防火" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://individualjack.github.io/posts/centos7%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-25T17:02:04+08:00" />
+<meta property="article:modified_time" content="2021-08-25T17:02:04+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Centos7相关操作命令"/>
+<meta name="twitter:description" content="CentOS 7基本环境配置和常用命令 本文主要用于介绍CentOS7的常用命令和基本配置，如：配置网卡、修改主机名、修改主机名和网卡的映射关系、关闭防火"/>
+<meta name="application-name" content="羽姗的加油站">
+<meta name="apple-mobile-web-app-title" content="羽姗的加油站"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://individualjack.github.io/posts/centos7%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/" /><link rel="prev" href="https://individualjack.github.io/posts/%E4%BD%BF%E7%94%A8hugo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/" /><link rel="next" href="https://individualjack.github.io/posts/oracle%E5%9C%A8centos7%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Centos7相关操作命令",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/individualjack.github.io\/posts\/centos7%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4\/"
+        },"genre": "posts","wordcount":  1201 ,
+        "url": "https:\/\/individualjack.github.io\/posts\/centos7%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4\/","datePublished": "2021-08-25T17:02:04+08:00","dateModified": "2021-08-25T17:02:04+08:00","publisher": {
+            "@type": "Organization",
+            "name": "作者"},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="羽姗的加油站">羽姗的加油站</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="羽姗的加油站">羽姗的加油站</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Centos7相关操作命令</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-25">2021-08-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1201 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-centos-6x和centos-7x命令对比">1. CentOS 6.x和CentOS 7.x命令对比</a></li>
+    <li><a href="#2-配置centos-7">2. 配置CentOS 7</a></li>
+    <li><a href="#21-登录系统">2.1 登录系统</a></li>
+    <li><a href="#2-配置网络">2. 配置网络</a></li>
+    <li><a href="#3-修改主机名">3. 修改主机名</a></li>
+    <li><a href="#4-修改和ip地址和主机名的映射关系">4. 修改和IP地址和主机名的映射关系</a></li>
+    <li><a href="#5-关闭防火墙">5. 关闭防火墙</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="centos-7基本环境配置和常用命令">CentOS 7基本环境配置和常用命令</h1>
+<blockquote>
+<p>本文主要用于介绍CentOS7的常用命令和基本配置，如：配置网卡、修改主机名、修改主机名和网卡的映射关系、关闭防火墙</p>
+</blockquote>
+<h2 id="1-centos-6x和centos-7x命令对比">1. CentOS 6.x和CentOS 7.x命令对比</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic4.zhimg.com/80/v2-c1e4981bce8014cb550e9007149e5a33_720w.jpg"
+        data-srcset="https://pic4.zhimg.com/80/v2-c1e4981bce8014cb550e9007149e5a33_720w.jpg, https://pic4.zhimg.com/80/v2-c1e4981bce8014cb550e9007149e5a33_720w.jpg 1.5x, https://pic4.zhimg.com/80/v2-c1e4981bce8014cb550e9007149e5a33_720w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic4.zhimg.com/80/v2-c1e4981bce8014cb550e9007149e5a33_720w.jpg"
+        title="img" /></p>
+<blockquote>
+<p>经过对比后，发现其实也么有多大的变化，就是CentOS 7多了一个systemctl命令，这个命令功能更加全面，可以替代service和checkconfig命令，还有就是ip addr替代了ifconfig命令，还有一些不常用的命令，我们后面用到再介绍</p>
+</blockquote>
+<h2 id="2-配置centos-7">2. 配置CentOS 7</h2>
+<h2 id="21-登录系统">2.1 登录系统</h2>
+<p>输入超级管理员账号root，然后输入其密码，回车登录</p>
+<h2 id="2-配置网络">2. 配置网络</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic2.zhimg.com/80/v2-bd40dca96cae47261f2a70ae84e921f5_720w.jpg"
+        data-srcset="https://pic2.zhimg.com/80/v2-bd40dca96cae47261f2a70ae84e921f5_720w.jpg, https://pic2.zhimg.com/80/v2-bd40dca96cae47261f2a70ae84e921f5_720w.jpg 1.5x, https://pic2.zhimg.com/80/v2-bd40dca96cae47261f2a70ae84e921f5_720w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic2.zhimg.com/80/v2-bd40dca96cae47261f2a70ae84e921f5_720w.jpg"
+        title="img" /></p>
+<p>①点击Edit编辑 ②选择虚拟网络配置器编辑网络配置</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic2.zhimg.com/80/v2-32a81e2a56d21bd52dbb7a382045acd1_720w.jpg"
+        data-srcset="https://pic2.zhimg.com/80/v2-32a81e2a56d21bd52dbb7a382045acd1_720w.jpg, https://pic2.zhimg.com/80/v2-32a81e2a56d21bd52dbb7a382045acd1_720w.jpg 1.5x, https://pic2.zhimg.com/80/v2-32a81e2a56d21bd52dbb7a382045acd1_720w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic2.zhimg.com/80/v2-32a81e2a56d21bd52dbb7a382045acd1_720w.jpg"
+        title="img" /></p>
+<p>①点击VMnet8，即NAT类型的网络，可以也选择桥接或仅主机类型的，但是要与当前虚拟机的网络类型保存一致 ②然后修改子网IP的网网段，我这里修改为192.168.100.0，子网掩码为255.255.255.0 ③点击OK完成修改</p>
+<p>在虚拟机的命令行中输入下面的命令，即使用vi编辑器修改网卡的配置文件，需要注意的是，CentOS7的网卡名称已经不是ifcfg-eth0，不同厂商的设备网卡名字不同</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">vi /etc/sysconfig/network-scripts/ifcfg-ens33
+</code></pre></div><p>这里只保留了一下重要的配置，其他的配置可选，配置的说明如下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">TYPE=Ethernet             #类型为以太网
+BOOTPROTO=static          #静态ip地址，即手动分配ip地址
+NAME=ens33                #网卡名称
+DEVICE=ens33              #网卡的设备名称为eth0
+ONBOOT=yes                #开机启动网络
+IPADDR=192.168.100.101    #指定具体的ip地址，要与上面配置为的NAT网络在同一个网段
+NETMASK=255.255.255.0     #配置子网掩码
+GATEWAY=192.168.100.2     #配置网关，VMware NAT网络的网关是该网段ip地址为2
+DNS1=114.114.114.114      #配置国内的一个域名解析器
+DNS2=8.8.8.8              #国外google的一个域名解析器
+</code></pre></div><p>修改完成后，保存退出，然后在命令行中输入如下的命令，重新启动网络服务</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">systemctl restart network
+</code></pre></div><p>最后检查一下网络，ping一下百度的地址，如果能ping通，按Ctrl+c停止ping</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">ping www.baidu.com
+</code></pre></div><p>网络配置好了，就可以是用网络连接工具，通过网络连接到这台虚拟机了，常用的连接工具有Putty、Xshell、SecureCRT等，这里我们使用SecureCRT</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic4.zhimg.com/80/v2-b900c19db56f15aebb7b25db8b65aa4b_720w.jpg"
+        data-srcset="https://pic4.zhimg.com/80/v2-b900c19db56f15aebb7b25db8b65aa4b_720w.jpg, https://pic4.zhimg.com/80/v2-b900c19db56f15aebb7b25db8b65aa4b_720w.jpg 1.5x, https://pic4.zhimg.com/80/v2-b900c19db56f15aebb7b25db8b65aa4b_720w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic4.zhimg.com/80/v2-b900c19db56f15aebb7b25db8b65aa4b_720w.jpg"
+        title="img" /></p>
+<p>①点击新建连接，连接的协议使用默认的SSH2 ②输入要连接的虚拟机的IP地址为192.168.100.101 ③输入用户名为root ④点击Connect进行连接</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic3.zhimg.com/80/v2-296834988a025e4f2bbbc51196748156_720w.jpg"
+        data-srcset="https://pic3.zhimg.com/80/v2-296834988a025e4f2bbbc51196748156_720w.jpg, https://pic3.zhimg.com/80/v2-296834988a025e4f2bbbc51196748156_720w.jpg 1.5x, https://pic3.zhimg.com/80/v2-296834988a025e4f2bbbc51196748156_720w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic3.zhimg.com/80/v2-296834988a025e4f2bbbc51196748156_720w.jpg"
+        title="img" /></p>
+<p>输入root用户的密码，然后点击OK</p>
+<h2 id="3-修改主机名">3. 修改主机名</h2>
+<p>使用SecureCRT连接上CentOS后，在命令行中输入如下命令，直接用命令修改主机名</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">hostnamectl set-hostname node-1.51doit.com
+</code></pre></div><h2 id="4-修改和ip地址和主机名的映射关系">4. 修改和IP地址和主机名的映射关系</h2>
+<p>在命令行中输入修改IP地址和主机名的映射关系</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">vi /etc/hosts
+</code></pre></div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic2.zhimg.com/80/v2-73852e6970700b3c4ac47dea3b8c4e71_720w.jpg"
+        data-srcset="https://pic2.zhimg.com/80/v2-73852e6970700b3c4ac47dea3b8c4e71_720w.jpg, https://pic2.zhimg.com/80/v2-73852e6970700b3c4ac47dea3b8c4e71_720w.jpg 1.5x, https://pic2.zhimg.com/80/v2-73852e6970700b3c4ac47dea3b8c4e71_720w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic2.zhimg.com/80/v2-73852e6970700b3c4ac47dea3b8c4e71_720w.jpg"
+        title="img" /></p>
+<p>新插入一行，前面是IP地址，然后是空格，后面是主机名，修改完成后保存退出</p>
+<h2 id="5-关闭防火墙">5. 关闭防火墙</h2>
+<p>Linux上的防火墙服务是多相应网络协议的端口进行保护的，如果该服务器作为一台外网可以访问的服务器，最好不要关闭防火墙服务，CentOS7不在使用iptables作为默认的防火墙服务，而是改成了firewalld这个服务</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">systemctl stop firewalld      #关闭防火墙服务网
+systemctl disable firewalld   #设置防火墙服务开机不启动
+</code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-08-25</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E4%BD%BF%E7%94%A8hugo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="prev" rel="prev" title="使用HUGO创建博客"><i class="fas fa-angle-left fa-fw"></i>使用HUGO创建博客</a>
+            <a href="/posts/oracle%E5%9C%A8centos7%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="next" rel="next" title="Oracle在CentOS7下的安装与配置">Oracle在CentOS7下的安装与配置<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
